@@ -170,14 +170,14 @@ def killprocess(message):
  try:
     user_msg = "{0}".format(message.text)
     subprocess.call("taskkill /IM " + user_msg.split(" ")[1])
-    bot.send_message(chat_id, "Готово!")
+    bot.send_message(chat_id, "Done!")
  except:
      bot.send_message(chat_id, "Error! Process name entered incorrectly!")
 
 @bot.message_handler(commands=["cmd", "Cmd"]) # CMD
 def cmdopen(message) :
 	subprocess.call("cmd")
-	bot.send_message(chat_id, "Готово!") # Send a command
+	bot.send_message(chat_id, "Done!") # Send a command
 
 @bot.message_handler(commands=["openurl", "Openurl"]) # OPEN LINK
 def openurl(message):
@@ -185,7 +185,7 @@ def openurl(message):
     user_msg = "{0}".format(message.text)
     url = user_msg.split(" ")[1]
     webbrowser.open_new_tab(url)
-    bot.send_message(chat_id, "Ready!")
+    bot.send_message(chat_id, "Done!")
  except:
         bot.send_message(chat_id, "Error! Link entered incorrectly!")
 
